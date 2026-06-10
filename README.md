@@ -60,6 +60,7 @@ Input (48 features per sensor observation)
 - **Optimizer:** Adam (lr=1e-3)
 - **LR scheduler:** ReduceLROnPlateau (patience=3, factor=0.5)
 - **Gradient clipping:** max_norm=1.0
+  
 The LSTM is well-suited for this task because traffic is a time series where temporal context matters — what happened at 8:00am affects what is normal at 8:15am. The gating mechanism allows the model to learn which historical patterns are relevant and which to ignore, producing better-calibrated predictions than a feedforward baseline, which in turn makes the residuals more meaningful as anomaly scores.
  
 ---
